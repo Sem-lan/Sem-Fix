@@ -1,0 +1,32 @@
+﻿<Window x:Class="Orbit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Orbit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
+    <Canvas x:Name="GameCanvas">
+        <Image x:Name="Apan" Height="58" Width="44" Canvas.Left="332" Canvas.Top="214" Source="/monkey3dmodel-removebg-previewbeskärd.png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image x:Name="Tapa" Height="62" Canvas.Left="604" Canvas.Top="212" Width="59" Source="/Terroristapa.png" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="Bombapa" Height="84" Canvas.Left="668" Canvas.Top="201" Width="94" Source="/Skälvmodsbombsapa.png" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+    </Canvas>
+</Window>

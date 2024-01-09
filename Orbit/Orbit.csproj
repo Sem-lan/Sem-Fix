@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Electrick_bullet.png" />
+    <None Remove="monkey3dmodel-removebg-previewbeskärd.png" />
+    <None Remove="Skälvmodsbombsapa.png" />
+    <None Remove="Terroristapa.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Electrick_bullet.png" />
+    <Resource Include="monkey3dmodel-removebg-previewbeskärd.png" />
+    <Resource Include="Skälvmodsbombsapa.png" />
+    <Resource Include="Terroristapa.png" />
+  </ItemGroup>
+
+</Project>
