@@ -18,6 +18,7 @@
     <None Remove="monkey3dmodel-removebg-preview.png" />
     <None Remove="monkey3dmodel-removebg-previewbeskärd.png" />
     <None Remove="PooShot.png" />
+    <None Remove="Proggram.png" />
     <None Remove="Skälvmodsbombsapa.png" />
     <None Remove="Slott.png" />
     <None Remove="Terroristapa.png" />
@@ -37,6 +38,7 @@
     <Resource Include="PooShot.png">
       <CustomToolNamespace>PooShot</CustomToolNamespace>
     </Resource>
+    <Resource Include="Proggram.png" />
     <Resource Include="Skälvmodsbombsapa.png" />
     <Resource Include="Slott.png" />
     <Resource Include="Terroristapa.png" />

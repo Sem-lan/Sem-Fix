@@ -45,9 +45,11 @@ namespace Orbit
         double BombApaHP = 8;
         double TerrorHP = 3;
         int Respawntime = 5;
-        int sentrytimer = 0;
+        double sentrytimer = 0;
         int Tkills = 0;
         int Bkills = 0;
+        int RebuildCounter = 5;
+        double RebuildCost = 20;
         DispatcherTimer Timer = new DispatcherTimer();
 
         DispatcherTimer TerorTimer = new DispatcherTimer();
@@ -99,6 +101,7 @@ namespace Orbit
             Peng.Text = "Cash: " + sentrytimer;
             TerrorKill.Text = "TerrorApor: " + Tkills;
             BombKill.Text = "BombApor: " + Bkills;
+            Rebuilds_left.Text = "Rebuilds Left: " + RebuildCounter;
 
         }
         private void Timer_Tick(object sender, EventArgs e)
@@ -113,11 +116,19 @@ namespace Orbit
             Peng.Text = "Cash: " + sentrytimer;
             if (Faster_Farting.Visibility == Visibility.Hidden)
             {
-                PooTimer += 3;
+                PooTimer += 12;
             }
             else
             {
-                PooTimer += 2;
+                PooTimer += 8;
+            }
+            if (Big_booty.Visibility == Visibility.Hidden)
+            {
+                PooTimer += 1;
+            }
+            else 
+            { 
+                 
             }
 
 
@@ -203,7 +214,7 @@ namespace Orbit
             {
                 ApeSpeedY = 4;
             }
-            if (PooTimer > 30)
+            if (PooTimer > 120)
             {
                 if (e.Key == Key.Space)
                 {
@@ -269,6 +280,15 @@ namespace Orbit
             }
             Canvas.SetLeft(Apan, Canvas.GetLeft(Apan) + ApeSpeedX);
             Canvas.SetTop(Apan, Canvas.GetTop(Apan) + ApeSpeedY);
+            if (Big_booty.Visibility == Visibility.Hidden)
+            {
+                Canvas.SetTop(Ass_extention, Canvas.GetTop(Apan) + 28);
+                Canvas.SetLeft(Ass_extention, Canvas.GetLeft(Apan)+6);
+            }
+            else
+            {
+
+            }
 
         }
         private void Sentry1() 
@@ -350,6 +370,8 @@ namespace Orbit
             {
                 Bkills += 1;
                 BombKill.Text = "BombApor: " + Bkills;
+                HPslott--;
+                SlottHPtext.Text = "Slott: " + HPslott;
             }
         }
         private void CreatFartShot()
@@ -677,6 +699,26 @@ namespace Orbit
                 sentrytimer -= 55;
                 HPapa += 10;
                 ApaHPtext.Text = "HP: " + HPapa;
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (sentrytimer > RebuildCost && HPslott <= 80 && RebuildCounter>0)
+            {
+                
+                sentrytimer -= RebuildCost;
+                HPslott += 20;
+                SlottHPtext.Text = "Slott: "+HPslott;
+                RebuildCounter--;
+                Rebuilds_left.Text = "Rebuilds Left: " + RebuildCounter;
+                RebuildCost = RebuildCost * 1.5;
+                RebuildTXT.Text =  RebuildCost.ToString();
+                if (RebuildCounter < 1)
+                {
+                    Rebuild.Visibility = Visibility.Hidden;
+                    RebuildTXT.Visibility = Visibility.Hidden;
+                }
             }
         }
     }
