@@ -7,8 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
     <Canvas x:Name="GameCanvas">
-        <Image x:Name="Apan" Height="58" Width="44" Canvas.Left="332" Canvas.Top="214" Source="/monkey3dmodel-removebg-previewbeskärd.png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Image x:Name="Tapa" Height="62" Canvas.Left="604" Canvas.Top="212" Width="59" Source="/Terroristapa.png" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
+        <Canvas.Background>
+            <ImageBrush ImageSource="/Map Bloons 7.png"/>
+        </Canvas.Background>
+        <Canvas x:Name="TEXTCANVAS">
+
+        </Canvas>
+        <Image x:Name="Slott" Height="434" Width="158" Source="/Slott.png" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="-46"/>
+        <Image x:Name="Apan" Height="58" Width="37" Canvas.Left="332" Canvas.Top="216" Source="/Aether_Manke.png" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Image x:Name="Tapa" Height="62" Canvas.Left="783" Canvas.Top="212" Width="59" Source="/Terroristapa.png" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -28,5 +35,21 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <Image x:Name="GameOver" Height="106" Canvas.Left="590" Width="246" Source="/VirtualBox_UBuntu_02_02_2024_15_11_02.png"/>
+        <Image x:Name="BombEX" Height="141" Canvas.Left="2" Canvas.Top="76" Width="156" Source="/Explotione.png"/>
+        <TextBlock x:Name="BombApaHPtxt" Canvas.Left="188" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="379" FontSize="16"/>
+        <TextBlock x:Name="TapaHptxt" Canvas.Left="242" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="382" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock x:Name="RespawnTXT" TextWrapping="Wrap" Text="TextBlock" Canvas.Left="372" Canvas.Top="176" Height="67" Width="204" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="100"/>
+        <TextBlock x:Name="ApaHPtext" TextWrapping="Wrap" Canvas.Left="269" Height="49" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Panel.ZIndex="100"/>
+        <TextBlock x:Name="SlottHPtext" TextWrapping="Wrap" Canvas.Left="97" Height="49" Width="139" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="100"/>
+        <TextBlock x:Name="Peng" Canvas.Left="369" TextWrapping="Wrap" Text="TextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" Height="49" Width="166" FontSize="30" Panel.ZIndex="100"/>
+        <TextBlock x:Name="TerrorKill" Canvas.Left="103" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="368" Height="40" Width="446" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="100"/>
+        <TextBlock x:Name="BombKill" Canvas.Left="103" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="385" Height="42" Width="446" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="100"/>
+        <Rectangle x:Name="Eliminator" Height="524" Canvas.Left="863" Stroke="Black" Canvas.Top="-52" Width="818" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Rectangle x:Name="TEliminator" Height="432" Canvas.Left="8" Width="51" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="1"/>
+        <Button x:Name="Faster_Farting" Content="Faster Farting" Height="32" Width="80" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Faster_Text" TextWrapping="Wrap" Text="75" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Top="-3" Height="13" Width="13"/>
+        <Button x:Name="Big_booty" Content="Fatter Ass" HorizontalAlignment="Center" Canvas.Top="32" VerticalAlignment="Center" Height="32" Width="80" Click="Big_booty_Click"/>
+        <TextBlock x:Name="Booty_Text" TextWrapping="Wrap" Text="55" Canvas.Top="29" Height="13" Width="13" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.715,1.584"/>
     </Canvas>
 </Window>
