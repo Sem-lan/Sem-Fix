@@ -52,6 +52,7 @@ namespace Orbit
         double RebuildCost = 20;
         bool fartcheck = true;
         bool Fatcheck = true;
+        int gameovertimer = 0;
         DispatcherTimer Timer = new DispatcherTimer();
 
         DispatcherTimer TerorTimer = new DispatcherTimer();
@@ -69,6 +70,7 @@ namespace Orbit
         {
             InitializeComponent();
 
+            Titlescreen.Visibility = Visibility.Visible;
             GameOver.Visibility = Visibility.Hidden;
             Faster_Farting.Visibility = Visibility.Visible;
 
@@ -103,6 +105,9 @@ namespace Orbit
             TerrorKill.Text = "TerrorApor: " + Tkills;
             BombKill.Text = "BombApor: " + Bkills;
             Rebuilds_left.Text = "Rebuilds Left: " + RebuildCounter;
+
+            Canvas.SetTop(Titlescreen, -45);
+            Canvas.SetLeft(Titlescreen, 0);
 
         }
         private void Timer_Tick(object sender, EventArgs e)
@@ -139,6 +144,7 @@ namespace Orbit
         {
             sentrytimer++;
             Peng.Text = "Cash: " + sentrytimer;
+            
         }
 
         private void TimerTeror_Tick(object sender, EventArgs e)
@@ -154,8 +160,11 @@ namespace Orbit
                 Respawntime --;
                 RespawnTXT.Text = "" + Respawntime;
             }
-
             CreatFartShot();
+            if (GameOver.Visibility == Visibility.Visible)
+            {
+                gameovertimer++;
+            }
 
         }
         private void Lv2(object sender, EventArgs e)
@@ -277,6 +286,29 @@ namespace Orbit
                     ApaHPtext.Text = "HP: " + HPapa;
                     Fatcheck = false;
                 }
+            }
+            if (e.Key == Key.D3)
+            {
+                if (sentrytimer > RebuildCost && HPslott <= 80 && RebuildCounter > 0)
+                {
+                    sentrytimer -= RebuildCost;
+                    HPslott += 20;
+                    SlottHPtext.Text = "Slott: " + HPslott;
+                    RebuildCounter--;
+                    Rebuilds_left.Text = "Rebuilds Left: " + RebuildCounter;
+                    RebuildCost = RebuildCost * 1.5;
+                    RebuildTXT.Text = RebuildCost.ToString();
+                    if (RebuildCounter < 1)
+                    {
+                        Rebuild.Visibility = Visibility.Hidden;
+                        RebuildTXT.Visibility = Visibility.Hidden;
+                        dollar.Visibility = Visibility.Hidden;
+                    }
+                }
+            }
+            if (e.Key == Key.Space && Titlescreen.Visibility == Visibility.Visible)
+            {
+                Startgame();
             }
         }
         void MoveApe()
@@ -436,13 +468,14 @@ namespace Orbit
             Rect bombrect = new Rect(Canvas.GetLeft(Bombapa), Canvas.GetTop(Bombapa), Bombapa.Width, Bombapa.Height);
             Rect elimrect = new Rect(Canvas.GetLeft(Eliminator), Canvas.GetTop(Eliminator), Eliminator.Width, Eliminator.Height);
             Rect telimrect = new Rect(Canvas.GetLeft(TEliminator), Canvas.GetTop(TEliminator), TEliminator.Width, TEliminator.Height);
+            Rect Reseter = new Rect(Canvas.GetLeft(Titlescreen), Canvas.GetTop(Titlescreen), Titlescreen.Width, Titlescreen.Height);
             //if ()
             //{
             //    HPslott -= 1;
             //    SlottHPtext.Text = "Slott: " + HPslott;
             //}
-            
-            
+
+
             foreach (var bullet in Bullets)
             {
                 Rect skottrect = new Rect(Canvas.GetLeft(bullet), Canvas.GetTop(bullet), bullet.Width, bullet.Height);
@@ -475,6 +508,11 @@ namespace Orbit
                     {
                         GameCanvas.Children.Remove(fs1);
                     }
+                    if (fs1Rect.IntersectsWith(Reseter))
+                    {
+                        fs1.Life -= 1;
+                        fs1.Opacity = fs1.Life;
+                    }
                 }
                 Fartshooter.RemoveAll(x => x.Life <= 0);
 
@@ -493,13 +531,18 @@ namespace Orbit
                     {
                         GameCanvas.Children.Remove(fs2);
                     }
+                    if (fs2Rect.IntersectsWith(Reseter))
+                    {
+                        fs2.Life2 -= 1;
+                        fs2.Opacity = fs2.Life2;
+                    }
                 }
                 Fartling.RemoveAll(x => x.Life2 <= 0);
 
             }
             if (HPslott < 1)
             {
-                GameOver.Visibility = Visibility.Visible;
+                GameOverscreen();
             }
             Bullets.RemoveAll(x => x.Visibility == Visibility.Hidden);
 
@@ -701,26 +744,66 @@ namespace Orbit
             BombKill.Text = "BombApor: " + Bkills;
         }
 
-
-
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void GameOverscreen()
         {
-            if (sentrytimer > RebuildCost && HPslott <= 80 && RebuildCounter>0)
+            GameOver.Visibility = Visibility.Visible;
+            Canvas.SetLeft(Tapa, 750);
+            Canvas.SetTop(Tapa, 700);
+            Canvas.SetTop(Titlescreen, -45);
+            Canvas.SetLeft(Titlescreen, 0);
+            if (gameovertimer > 5)
             {
-                sentrytimer -= RebuildCost;
-                HPslott += 20;
-                SlottHPtext.Text = "Slott: "+HPslott;
-                RebuildCounter--;
-                Rebuilds_left.Text = "Rebuilds Left: " + RebuildCounter;
-                RebuildCost = RebuildCost * 1.5;
-                RebuildTXT.Text =  RebuildCost.ToString();
-                if (RebuildCounter < 1)
-                {
-                    Rebuild.Visibility = Visibility.Hidden;
-                    RebuildTXT.Visibility = Visibility.Hidden;
-                }
+                GameOver.Visibility = Visibility.Hidden;
+                Titlescreen.Visibility = Visibility.Visible;
+                gameovertimer = 0;
             }
+
+        }
+        private void Startgame()
+        {
+            GameOver.Visibility = Visibility.Hidden;
+            Titlescreen.Visibility = Visibility.Hidden;
+            Big_booty.Visibility = Visibility.Visible;
+            Faster_Farting.Visibility = Visibility.Visible;
+            Rebuild.Visibility = Visibility.Visible;
+            RebuildTXT.Visibility = Visibility.Visible;
+            dollar.Visibility = Visibility.Visible;
+            ApeSpeedX = 0;
+            ApeSpeedY = 0;
+            HPapa = 10;
+            HPslott = 100;
+            PooTimer = 0;
+            BombApaHP = 8;
+            TerrorHP = 3;
+            Respawntime = 5;
+            sentrytimer = 0;
+            Tkills = 0;
+            Bkills = 0;
+            RebuildCounter = 5;
+            RebuildCost = 20;
+            fartcheck = true;
+            Fatcheck = true;
+            gameovertimer = 0;
+            ApaHPtext.Text = "HP: " + HPapa;
+            SlottHPtext.Text = "Slott: " + HPslott;
+            BombApaHPtxt.Text = "" + BombApaHP;
+            TapaHptxt.Text = "" + TerrorHP;
+            RespawnTXT.Text = "" + Respawntime;
+            Peng.Text = "Cash: " + sentrytimer;
+            TerrorKill.Text = "TerrorApor: " + Tkills;
+            BombKill.Text = "BombApor: " + Bkills;
+            Rebuilds_left.Text = "Rebuilds Left: " + RebuildCounter;
+            RebuildTXT.Text = RebuildCost.ToString();
+            Canvas.SetLeft(Bombapa, 750);
+            Canvas.SetTop(Bombapa, 100);
+            Canvas.SetLeft(Tapa, 750);
+            Canvas.SetTop(Tapa, 400);
+            Canvas.SetTop(Apan, 200);
+            Canvas.SetLeft(Apan, 165);
+            Canvas.SetTop(Titlescreen, 2000);
+            Canvas.SetLeft(Titlescreen, 2000);
+
+
         }
     }
 }

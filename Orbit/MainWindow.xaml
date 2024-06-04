@@ -15,7 +15,7 @@
         </Canvas>
         <Image x:Name="Slott" Height="434" Width="158" Source="/Slott.png" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="-46"/>
         <Image x:Name="Apan" Height="58" Width="37" Canvas.Left="332" Canvas.Top="216" Source="/Aether_Manke.png" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Image x:Name="Tapa" Height="62" Canvas.Left="783" Canvas.Top="212" Width="59" Source="/Terroristapa.png" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center">
+        <Image x:Name="Tapa" Height="62" Canvas.Left="783" Canvas.Top="34" Width="59" Source="/Terroristapa.png" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -35,7 +35,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image x:Name="GameOver" Height="106" Canvas.Left="590" Width="246" Source="/VirtualBox_UBuntu_02_02_2024_15_11_02.png"/>
         <Image x:Name="BombEX" Height="141" Canvas.Left="2" Canvas.Top="76" Width="156" Source="/Explotione.png"/>
         <TextBlock x:Name="BombApaHPtxt" Canvas.Left="188" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="379" FontSize="16"/>
         <TextBlock x:Name="TapaHptxt" Canvas.Left="242" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="382" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
@@ -43,21 +42,24 @@
         <TextBlock x:Name="ApaHPtext" TextWrapping="Wrap" Canvas.Left="269" Height="49" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Panel.ZIndex="100"/>
         <TextBlock x:Name="SlottHPtext" TextWrapping="Wrap" Canvas.Left="97" Height="49" Width="139" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="100"/>
         <TextBlock x:Name="Peng" Canvas.Left="369" TextWrapping="Wrap" Text="TextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" Height="49" Width="166" FontSize="30" Panel.ZIndex="100"/>
-        <TextBlock x:Name="TerrorKill" Canvas.Left="103" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="368" Height="40" Width="446" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="100"/>
-        <TextBlock x:Name="BombKill" Canvas.Left="103" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="385" Height="42" Width="446" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="100"/>
+        <TextBlock x:Name="TerrorKill" Canvas.Left="115" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="368" Height="40" Width="285" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="100"/>
+        <TextBlock x:Name="BombKill" Canvas.Left="115" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="385" Height="42" Width="285" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="100"/>
         <Rectangle x:Name="Eliminator" Height="524" Canvas.Left="863" Stroke="Black" Canvas.Top="-52" Width="818" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Rectangle x:Name="TEliminator" Height="432" Canvas.Left="8" Width="51" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="1"/>
-        <Button x:Name="Rebuild" Content="Rebuild Castle" Canvas.Top="380" Height="32" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click_1"/>
-        <TextBlock x:Name="RebuildTXT" TextWrapping="Wrap" Canvas.Top="377" HorizontalAlignment="Center" VerticalAlignment="Top"><Run Language="en-gb" Text="2"/><Run Text="0"/></TextBlock>
+        <TextBlock x:Name="RebuildTXT" TextWrapping="Wrap" Canvas.Top="304" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="2" Text="20" Height="42" Width="64" FontSize="24" Foreground="White"/>
         <Rectangle x:Name="Ass_extention" Height="8" Canvas.Left="315" Stroke="#01000000" Canvas.Top="439" Width="11" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Proggram.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock x:Name="Rebuilds_left" Canvas.Left="103" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="358" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92"/>
-        <Image x:Name="Faster_Farting" Height="128" Width="112" Source="/Untitled-1.jpg" Canvas.Left="535" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Image x:Name="Big_booty" Height="124" Width="110" Source="/Big.jpg" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="680" Canvas.Top="1"/>
-        <Label x:Name="PooshooterInfo" Content="Q = LV1 Sentry" Canvas.Left="324" Canvas.Top="356" FontSize="20"/>
-        <Label x:Name="PooshooterInfo_Copy" Content="E = LV2 Sentry" Canvas.Left="326" Canvas.Top="375" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Rebuilds_left" Canvas.Left="115" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="358" HorizontalAlignment="Left" VerticalAlignment="Center" Width="92"/>
+        <Image x:Name="Faster_Farting" Height="128" Width="112" Source="/Untitled-1.jpg" Canvas.Left="565" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="-4"/>
+        <Image x:Name="Big_booty" Height="124" Width="110" Source="/Big.jpg" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="678" Canvas.Top="-3"/>
+        <Label x:Name="PooshooterInfo" Content="Q = LV1 Sentry - 15$" Canvas.Left="565" Canvas.Top="356" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Width="196"/>
+        <Label x:Name="PooshooterInfo_Copy" Content="E = LV2 Sentry - 35$" Canvas.Left="568" Canvas.Top="374" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Width="193"/>
+        <Image x:Name="Rebuild" Height="128" Width="112" Source="/rebuild.jpg" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="338" Canvas.Left="-2"/>
+        <Label x:Name="dollar" Content="$" Canvas.Left="54" Canvas.Top="299" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Width="65" Background="Transparent" Foreground="White"/>
+        <Image x:Name="GameOver" Height="459" Width="828" Source="/Untitled-1-Recovered.jpg" Canvas.Top="-37" Canvas.Left="-6" Panel.ZIndex="1000" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Image x:Name="Titlescreen" Height="459" Width="828" Source="/title_new.jpg" Canvas.Top="-35" Canvas.Left="-8" Panel.ZIndex="1000" HorizontalAlignment="Left" VerticalAlignment="Center"/>
     </Canvas>
 </Window>

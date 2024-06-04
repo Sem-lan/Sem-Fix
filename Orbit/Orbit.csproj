@@ -21,9 +21,13 @@
     <None Remove="monkey3dmodel-removebg-previewbeskärd.png" />
     <None Remove="PooShot.png" />
     <None Remove="Proggram.png" />
+    <None Remove="rebuild.jpg" />
     <None Remove="Skälvmodsbombsapa.png" />
     <None Remove="Slott.png" />
     <None Remove="Terroristapa.png" />
+    <None Remove="title.jpg" />
+    <None Remove="title_new.jpg" />
+    <None Remove="Untitled-1-Recovered.jpg" />
     <None Remove="Untitled-1.jpg" />
     <None Remove="VirtualBox_UBuntu_02_02_2024_15_11_02.png" />
   </ItemGroup>
@@ -44,9 +48,13 @@
       <CustomToolNamespace>PooShot</CustomToolNamespace>
     </Resource>
     <Resource Include="Proggram.png" />
+    <Resource Include="rebuild.jpg" />
     <Resource Include="Skälvmodsbombsapa.png" />
     <Resource Include="Slott.png" />
     <Resource Include="Terroristapa.png" />
+    <Resource Include="title.jpg" />
+    <Resource Include="title_new.jpg" />
+    <Resource Include="Untitled-1-Recovered.jpg" />
     <Resource Include="Untitled-1.jpg" />
     <Resource Include="VirtualBox_UBuntu_02_02_2024_15_11_02.png" />
   </ItemGroup>
