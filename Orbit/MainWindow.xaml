@@ -47,10 +47,6 @@
         <TextBlock x:Name="BombKill" Canvas.Left="103" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="385" Height="42" Width="446" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="100"/>
         <Rectangle x:Name="Eliminator" Height="524" Canvas.Left="863" Stroke="Black" Canvas.Top="-52" Width="818" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Rectangle x:Name="TEliminator" Height="432" Canvas.Left="8" Width="51" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="1"/>
-        <Button x:Name="Faster_Farting" Content="Faster Farting" Height="32" Width="80" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <TextBlock x:Name="Faster_Text" TextWrapping="Wrap" Text="75" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Top="-3" Height="13" Width="13"/>
-        <Button x:Name="Big_booty" Content="Fatter Ass" HorizontalAlignment="Center" Canvas.Top="32" VerticalAlignment="Center" Height="32" Width="80" Click="Big_booty_Click"/>
-        <TextBlock x:Name="Booty_Text" TextWrapping="Wrap" Text="55" Canvas.Top="29" Height="13" Width="13" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.715,1.584"/>
         <Button x:Name="Rebuild" Content="Rebuild Castle" Canvas.Top="380" Height="32" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click_1"/>
         <TextBlock x:Name="RebuildTXT" TextWrapping="Wrap" Canvas.Top="377" HorizontalAlignment="Center" VerticalAlignment="Top"><Run Language="en-gb" Text="2"/><Run Text="0"/></TextBlock>
         <Rectangle x:Name="Ass_extention" Height="8" Canvas.Left="315" Stroke="#01000000" Canvas.Top="439" Width="11" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -59,5 +55,9 @@
             </Rectangle.Fill>
         </Rectangle>
         <TextBlock x:Name="Rebuilds_left" Canvas.Left="103" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="358" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92"/>
+        <Image x:Name="Faster_Farting" Height="128" Width="112" Source="/Untitled-1.jpg" Canvas.Left="535" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image x:Name="Big_booty" Height="124" Width="110" Source="/Big.jpg" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="680" Canvas.Top="1"/>
+        <Label x:Name="PooshooterInfo" Content="Q = LV1 Sentry" Canvas.Left="324" Canvas.Top="356" FontSize="20"/>
+        <Label x:Name="PooshooterInfo_Copy" Content="E = LV2 Sentry" Canvas.Left="326" Canvas.Top="375" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Canvas>
 </Window>

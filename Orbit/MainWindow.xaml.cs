@@ -50,6 +50,8 @@ namespace Orbit
         int Bkills = 0;
         int RebuildCounter = 5;
         double RebuildCost = 20;
+        bool fartcheck = true;
+        bool Fatcheck = true;
         DispatcherTimer Timer = new DispatcherTimer();
 
         DispatcherTimer TerorTimer = new DispatcherTimer();
@@ -69,7 +71,6 @@ namespace Orbit
 
             GameOver.Visibility = Visibility.Hidden;
             Faster_Farting.Visibility = Visibility.Visible;
-            Faster_Text.Visibility = Visibility.Visible;
 
             Timer.Tick += new EventHandler(Timer_Tick);
             Timer.Interval = TimeSpan.FromMilliseconds(10);
@@ -256,6 +257,26 @@ namespace Orbit
             {
                 Bkills += 1;
                 BombKill.Text = "BombApor: " + Bkills;
+            }
+            if (e.Key == Key.D1 && sentrytimer>74)
+            {
+                if (fartcheck = true)
+                {
+                    Faster_Farting.Visibility = Visibility.Hidden;
+                    sentrytimer -= 75;
+                    fartcheck = false;
+                }
+            }
+            if (e.Key == Key.D2 && sentrytimer > 54)
+            {
+                if (Fatcheck = true)
+                {
+                    Big_booty.Visibility = Visibility.Hidden;
+                    sentrytimer -= 55;
+                    HPapa += 10;
+                    ApaHPtext.Text = "HP: " + HPapa;
+                    Fatcheck = false;
+                }
             }
         }
         void MoveApe()
@@ -680,33 +701,13 @@ namespace Orbit
             BombKill.Text = "BombApor: " + Bkills;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (sentrytimer > 75)
-            {
-                Faster_Farting.Visibility = Visibility.Hidden;
-                Faster_Text.Visibility = Visibility.Hidden;
-                sentrytimer -= 75;
-            }
-        }
 
-        private void Big_booty_Click(object sender, RoutedEventArgs e)
-        {
-            if (sentrytimer > 55)
-            {
-                Big_booty.Visibility = Visibility.Hidden;
-                Booty_Text.Visibility = Visibility.Hidden;
-                sentrytimer -= 55;
-                HPapa += 10;
-                ApaHPtext.Text = "HP: " + HPapa;
-            }
-        }
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (sentrytimer > RebuildCost && HPslott <= 80 && RebuildCounter>0)
             {
-                
                 sentrytimer -= RebuildCost;
                 HPslott += 20;
                 SlottHPtext.Text = "Slott: "+HPslott;

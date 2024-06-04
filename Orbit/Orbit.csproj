@@ -9,10 +9,12 @@
 
   <ItemGroup>
     <None Remove="Aether_Manke.png" />
+    <None Remove="Big.jpg" />
     <None Remove="Electrick_bullet.png" />
     <None Remove="Explotione.png" />
     <None Remove="Fartling.png" />
     <None Remove="fartshooter.png" />
+    <None Remove="Faster_Farting.jpg" />
     <None Remove="Map Bloons 7.png" />
     <None Remove="Monkey3dModel-RemoveAether.png" />
     <None Remove="monkey3dmodel-removebg-preview.png" />
@@ -22,15 +24,18 @@
     <None Remove="Skälvmodsbombsapa.png" />
     <None Remove="Slott.png" />
     <None Remove="Terroristapa.png" />
+    <None Remove="Untitled-1.jpg" />
     <None Remove="VirtualBox_UBuntu_02_02_2024_15_11_02.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Aether_Manke.png" />
+    <Resource Include="Big.jpg" />
     <Resource Include="Electrick_bullet.png" />
     <Resource Include="Explotione.png" />
     <Resource Include="Fartling.png" />
     <Resource Include="fartshooter.png" />
+    <Resource Include="Faster_Farting.jpg" />
     <Resource Include="Map Bloons 7.png" />
     <Resource Include="Monkey3dModel-RemoveAether.png" />
     <Resource Include="monkey3dmodel-removebg-preview.png" />
@@ -42,6 +47,7 @@
     <Resource Include="Skälvmodsbombsapa.png" />
     <Resource Include="Slott.png" />
     <Resource Include="Terroristapa.png" />
+    <Resource Include="Untitled-1.jpg" />
     <Resource Include="VirtualBox_UBuntu_02_02_2024_15_11_02.png" />
   </ItemGroup>
 
